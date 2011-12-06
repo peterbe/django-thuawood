@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+
+<title>{% block title %}{% endblock %}</title>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/bilder/rss.xml" >
+
+<link rel="stylesheet" type="text/css" src="{{ STATIC_URL }}css/screen.css">
+
+{% block extracss %}{% endblock %}
+
+<!--<script type="text/javascript" tal:attributes="src string:${rooturl}/core.js"></script>-->
+{% block extrajs %}{% endblock %}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+
+<!--
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-94373-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+        'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+-->
+
+</head>
+<body>
+
+<div id="thumbs">
+
+<!--
+<a tal:repeat="bust python:here.bilder.getBusts(sort='random', howmany=70)"
+   tal:attributes="title bust/getTitle;
+                   href bust/absolute_url_path"
+ ><img
+       tal:define="i bust/getThumbnail"
+       tal:replace="structure python:i.tag(alt=bust.getTitle(),border='0')"
+ /></a>
+-->
+
+<br />
+<a href="/bilder/rss.xml"
+   title="RSS f&ouml;r den som vet vad det &auml;r">RSS</a>
+</div>&nbsp;<div id="main">
+
+
+<div id="nav">
+  <a href="/">Hem</a>
+  &nbsp;
+  <a href="snideri">Snideri</a>
+  &nbsp;
+  <a href="kontakt">Kontakt</a>
+  &nbsp;
+  <a href="lankar">L&auml;nkar</a>
+  &nbsp;
+  <a href="gastbok">G&auml;stbok</a>
+  &nbsp;
+</div>
+
+<a name="top"></a>
+
+
+
+<div id="content">
+{% block header %}
+<h1 id="header">
+	<span>{{ root_title }}</span>
+</h1>
+{% endblock %}
+
+    <h2>{{ page_title }}</h2>
+
+{% block content %}
+
+{% endblock %}
+</div>
+
+</div><!-- end main -->
+
+
+<div id="footer">
+
+<div><p>&copy;
+{% now "Y" %}
+</p></div>
+
+</div>
+<!-- end div footer -->
+
+</body>
+</html>

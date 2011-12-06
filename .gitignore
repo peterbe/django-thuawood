@@ -1,2 +1,3 @@
 thuawood/settings/local.py
-
+thuawood/static/cache/
+thuawood/static/photos/

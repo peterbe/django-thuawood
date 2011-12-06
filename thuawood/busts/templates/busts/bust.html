@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+{{ bust.title }}
+
+{% thumbnail bust.image "600x600" as im %}
+  <img src="{{ STATIC_URL }}{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ bust.title }}">
+{% endthumbnail %}
+
+{% endblock %}
