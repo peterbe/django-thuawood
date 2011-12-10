@@ -37,7 +37,7 @@
 <div id="thumbs">
 {% load thumbnail %}
 {% load cache %}
-{% cache 3600 random_busts %}
+{% cache 600 random_busts %}
 {% for bust in random_busts %}
 <a href="{% url bust bust.oid %}" title="{{ bust.title }}">
 {% thumbnail bust.image "50x50" crop="top" as im %}
@@ -90,8 +90,7 @@
 
 <div id="footer">
 
-<div><p>&copy;
-{% now "Y" %}
+<div><p>&copy; Thua Bengtsson, {% now "Y" %}
 </p></div>
 
 </div>

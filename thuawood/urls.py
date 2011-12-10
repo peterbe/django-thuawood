@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('busts.urls')),
+    url(r'^gastbok', include('guestbook.urls')),
     # url(r'^$', 'thuawood.views.home', name='home'),
     # url(r'^thuawood/', include('thuawood.foo.urls')),
 

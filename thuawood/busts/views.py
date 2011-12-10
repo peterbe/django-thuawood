@@ -12,3 +12,18 @@ def bust(request, oid):
     bust = get_object_or_404(Bust, oid=oid)
     data = {'bust': bust}
     return render(request, 'busts/bust.html', data)
+
+
+def snideri(request):
+    data = {}
+    return render(request, 'busts/snideri.html', data)
+
+
+def kontakt(request):
+    data = {}
+    return render(request, 'busts/kontakt.html', data)
+
+
+def lankar(request):
+    data = {}
+    return render(request, 'busts/lankar.html', data)

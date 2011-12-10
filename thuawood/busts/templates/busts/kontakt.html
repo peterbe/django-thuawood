@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}Kontakt - {{ block.super }}{% endblock %}
+
+{% block page_title %}
+Kontakt
+{% endblock %}
+
+{% block content %}
+<p>
+0390 / 101 86<br />
+070 / 760 08 67<br />
+Thua Bengtsson<br />
+R&#229;dmansgr&#228;nd 8<br />
+563 31 Gr&#228;nna<br />
+thuabengtsson@yahoo.se<br />
+</p>
+
+
+<p>
+<img src="{{ STATIC_URL }}images/fonster.jpg" alt="" style="float:left" />
+<img src="{{ STATIC_URL }}images/008.JPG" alt="" style="float:left;margin-right:10px" />
+
+<img src="{{ STATIC_URL }}images/011.JPG" alt="" style="float:left;margin-right:10px" />
+
+<img src="{{ STATIC_URL }}images/004.JPG" alt="" style="float:left" />
+<img src="{{ STATIC_URL }}images/024.JPG" alt="" style="float:left;margin-right:10px" />
+
+</p>
+
+{% endblock %}

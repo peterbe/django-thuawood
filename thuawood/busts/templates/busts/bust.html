@@ -6,6 +6,8 @@
 {% block page_title %}
 <a name="title"></a>{{ bust.title }}{% endblock %}
 {% block content %}
+<span>{{ bust.create_date|date:"M Y" }}</span>
+
 
 <p>
 {% thumbnail bust.image "600x600" as im %}
@@ -20,7 +22,9 @@
 
 &nbsp;
 {% with bust.get_next_by_create_date as next_bust %}
+{% if next_bust %}
 <a class="next" href="{% url bust next_bust.oid %}#title">N&#228;sta ({{ next_bust.title }}) &gt;&gt;</a>
+{% endif %}
 {% endwith %}
 </p>
 

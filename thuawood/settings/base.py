@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 HERE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 path = lambda x: os.path.join(HERE, x)
@@ -125,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'busts',
+    'guestbook',
     'sorl.thumbnail',
 )
 
@@ -162,3 +165,6 @@ CACHES = {
         'KEY_PREFIX': 'tw',
     }
 }
+
+
+PROJECT_TITLE = "Thuas trägubbar"

@@ -31,12 +31,11 @@ def _upload_to_product(upload_path, instance, filename):
         pre += '-%s' % c
         filename = pre + post
 
-    print "returning", repr(filename.replace(settings.MEDIA_ROOT+'/', ''))
     return filename.replace(settings.MEDIA_ROOT+'/', '')
 
 
 class Bust(models.Model):
-    oid = models.CharField(max_length=100)
+    oid = models.CharField(max_length=100, db_index=True)
     title = models.CharField(max_length=400, blank=True)
     description = models.TextField(blank=True)
     is_published = models.BooleanField(default=False)

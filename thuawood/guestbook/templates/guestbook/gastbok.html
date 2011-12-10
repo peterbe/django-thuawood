@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block extracss %}
+<style type="text/css">
+td.head { text-align:right; font-weight:bold; }
+.sign { margin:10px;}
+.sign a { font-size:120%; font-weight:bold;}
+.entry { border-top:1px solid #ccc; padding:10px; margin-bottom:10px; width:600px;}
+</style>
+{% endblock %}
+
+{% block title %}G&auml;stbok - {{ block.super }}{% endblock %}
+
+{% block page_title %}G&auml;stbok{% endblock %}
+
+{% block content %}
+
+<p class="sign">
+<a href="{% url skriv %}">Skriv in i G&auml;stboken</a>
+</p>
+
+{% for entry in entries %}
+<div class="entry">
+
+<table>
+  <tr>
+    <td class="head">Namn:</td>
+    <td>{{ entry.name }}</td>
+  </tr>
+  {% if entry.city %}
+  <tr>
+    <td class="head">Stad:</td>
+    <td>{{ entry.city }}</td>
+  </tr>
+  {% endif %}
+  {% comment %}
+  <tr>
+    <td class="head">E-post:</td>
+    <td><a class="aeh" href="mailto:jonasson.ann~ATT~(removethis)telia_dot_com">jonasson.ann~ATT~(removethis)telia_dot_com</a></td>
+  </tr>
+  {% endcomment %}
+  {% if entry.homepage %}
+  <tr>
+    <td class="head">Hemsida:</td>
+    <td><a href="{{ entry.homepage }}" rel="nofollow" target="_blank">{{ entry.homepage }}</a></td>
+  </tr>
+  {% endif %}
+  <tr>
+    <td valign="top" class="head">Kommentar:</td>
+    <td>{{ entry.comment|linebreaksbr }}</td>
+  </tr>
+</table>
+
+</div>
+{% endfor %}
+
+{% endblock %}

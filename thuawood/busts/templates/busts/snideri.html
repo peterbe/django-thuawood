@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}Snideri - {{ block.super }}{% endblock %}
+
+{% block page_title %}
+Snideri
+{% endblock %}
+
+{% block content %}
+
+<p>Hejsan! Jag heter Thua Bengtsson och bor i Gr&#228;nna.
+Jag b&#246;rjade snida figurer 2002. Jag har gjort lite
+allt m&#246;jligt, men fr&#228;mst k&#228;nda profiler. Du
+kan best&#228;lla ett portr&#228;tt av n&#229;gon du k&#228;nner,
+skicka i s&#229; fall med ett foto. Sakerna &#228;r gjorda i
+pil och lind och gubbarna &#228;r unge&#228;r 20-30 cm h&#246;ga.
+</p>
+
+
+<p>
+
+
+<a title="Schack"><img src="{{ STATIC_URL }}images/011-2.JPG"
+                       style="float:left; margin-right:10px;  margin-bottom:10px"
+                       alt="Schack" /></a>
+
+
+
+<a title="Carina Swärd"><img src="{{ STATIC_URL}}images/carina.jpg"
+                             alt="Carina Swärd" /></a>
+
+<a title="Bröllop"><img src="{{ STATIC_URL}}images/brollop2.jpg"
+                        alt="Bröllop" /></a>
+
+<a title="Conny Scheibe"><img src="{{ STATIC_URL}}images/conny-60.jpg"
+    alt="Conny Scheibe" /></a>
+
+<a title="Ola Alfredsson"><img src="{{ STATIC_URL}}images/ola.jpg"
+    alt="Ola Alfredsson" /></a>
+
+<a title="Gunnar Storm"><img src="{{ STATIC_URL}}images/present.jpg"
+                             alt="Gunnar Storm" /></a>
+
+<a title="Bosse Hanssen"><img src="{{ STATIC_URL}}images/bosse.jpg"
+    alt="Bosse Hanssen" /></a>
+
+<a title="Bil"><img src="{{ STATIC_URL}}images/rod-bil.jpg" alt="Bil" /></a>
+
+<a title="Anders Råsberg"><img src="{{ STATIC_URL}}images/anders-r.jpg"
+    alt="Anders Råsberg" /></a>
+
+</p>
+
+{% endblock %}
