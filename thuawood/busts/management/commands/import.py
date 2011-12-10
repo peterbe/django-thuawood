@@ -18,8 +18,10 @@ class Command(BaseCommand):
             print oid.ljust(20),
             filename = image_url.split('/')[-1]
             tmp_filename = '/tmp/%s_%s' %(oid, filename)
-            with open(tmp_filename, 'wb') as f:
-                f.write(urlopen(image_url).read())
+            f = open(tmp_filename, 'wb')
+            #with open(tmp_filename, 'wb') as f:
+            f.write(urlopen(image_url).read())
+            f.close()
             print tmp_filename
             b = Bust.objects.create(
               oid=oid,
