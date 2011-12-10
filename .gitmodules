@@ -1,0 +1,3 @@
+[submodule "thuawood/vendor/src/django"]
+	path = thuawood/vendor/src/django
+	url = git://github.com/django/django.git
