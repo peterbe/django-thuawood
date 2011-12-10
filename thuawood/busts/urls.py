@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from feeds import BustFeed
 
-from . import views
+import views
 urlpatterns = patterns('',
     url('^$', views.home, name='home'),
     url('^snideri$', views.snideri, name='snideri'),
