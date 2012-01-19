@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404
-from models import Bust
+from models import Bust, Embed
 
 
 def home(request):
@@ -26,4 +26,5 @@ def kontakt(request):
 
 def lankar(request):
     data = {}
+    data['embeds'] = Embed.objects.all().order_by('create_date')
     return render(request, 'busts/lankar.html', data)

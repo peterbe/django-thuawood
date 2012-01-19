@@ -16,15 +16,19 @@ Länkar
 
 {% block content %}
 <div id="youtubevideo">
+{% for embed in embeds %}
+  {{ embed.html|safe }}
+  {% if embed.note %}
+  <p>{{ embed.note }}</p>
+  {% endif %}
+{% endfor %}
+{% comment %}
 <object width="320" height="265">
 <param name="movie" value="http://www.youtube-nocookie.com/v/dHphetCRNQc&amp;hl=sv&amp;fs=1&amp;rel=0" />
 <param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" />
 <embed src="http://www.youtube-nocookie.com/v/dHphetCRNQc&amp;hl=sv&amp;fs=1&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object>
 
-
 <p>Tycker denna videon &#228;r gullig och s&#229; &#228;r det lite reklam f&#246;r Gr&#228;nna</p>
-
-
 
 
 <object width="320" height="265">
@@ -34,7 +38,7 @@ Länkar
 <embed src="http://www.youtube.com/v/voyjVLSuJgA&amp;hl=en_GB&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object>
 
 <p>Min idol</p>
-
+{% endcomment %}
 
 
 

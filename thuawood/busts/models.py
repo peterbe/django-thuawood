@@ -47,3 +47,8 @@ class Bust(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return 'bust', [self.oid]
+
+class Embed(models.Model):
+    html = models.TextField()
+    note = models.CharField(max_length=300, blank=True, null=True)
+    create_date = models.DateTimeField(default=datetime.datetime.utcnow)
