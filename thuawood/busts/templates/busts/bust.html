@@ -3,6 +3,12 @@
 
 {% block title %}{{ bust.title }} - {{ block.super }}{% endblock %}
 
+{% block extracss %}
+{% thumbnail bust.image "600x600" as im %}
+<meta property="og:image" content="{{ STATIC_URL }}{{ im.url }}">
+{% endthumbnail %}
+{% endblock %}
+
 {% block page_title %}
 <a name="title"></a>{{ bust.title }}{% endblock %}
 {% block content %}
