@@ -1,4 +1,4 @@
-django
+django==1.4.5
 sorl-thumbnail
 PIL
 python-memcached
