@@ -1,4 +1,4 @@
-from busts.models import Bust
+from thuawood.busts.models import Bust
 
 
 def busts(request):

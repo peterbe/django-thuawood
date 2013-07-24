@@ -114,7 +114,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
-    'busts.context_processors.busts',
+    'thuawood.busts.context_processors.busts',
 )
 
 INSTALLED_APPS = (
@@ -126,8 +126,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'busts',
-    'guestbook',
+    'thuawood.busts',
+    'thuawood.guestbook',
     'sorl.thumbnail',
 )
 

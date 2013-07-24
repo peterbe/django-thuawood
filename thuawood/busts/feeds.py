@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.contrib.syndication.views import Feed
-from busts.models import Bust
+from thuawood.busts.models import Bust
 
 class BustFeed(Feed):
     title = settings.PROJECT_TITLE
