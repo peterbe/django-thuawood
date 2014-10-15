@@ -1,4 +1,6 @@
-django==1.4.5
-sorl-thumbnail
-PIL
-python-memcached
+Django==1.5
+Pillow==2.6.1
+argparse==1.2.1
+psycopg2==2.5.4
+python-memcached==1.53
+sorl-thumbnail==11.12

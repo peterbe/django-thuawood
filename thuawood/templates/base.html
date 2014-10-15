@@ -21,7 +21,7 @@
 {% load cache %}
 {% cache 600 random_busts %}
 {% for bust in random_busts %}
-<a href="{% url bust bust.oid %}" title="{{ bust.title }}">
+<a href="{% url 'bust' bust.oid %}" title="{{ bust.title }}">
 {% thumbnail bust.image "50x50" crop="top" as im %}
   <img src="{{ STATIC_URL }}{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
        alt="{{ bust.title }}" border="0">
@@ -39,13 +39,13 @@
 <div id="nav">
   <a href="/">Hem</a>
   &nbsp;
-  <a href="{% url snideri %}">Snideri</a>
+  <a href="{% url 'snideri' %}">Snideri</a>
   &nbsp;
-  <a href="{% url kontakt %}">Kontakt</a>
+  <a href="{% url 'kontakt' %}">Kontakt</a>
   &nbsp;
-  <a href="{% url lankar %}">L&auml;nkar</a>
+  <a href="{% url 'lankar' %}">L&auml;nkar</a>
   &nbsp;
-  <a href="{% url gastbok %}">G&auml;stbok</a>
+  <a href="{% url 'gastbok' %}">G&auml;stbok</a>
   &nbsp;
 </div>
 
