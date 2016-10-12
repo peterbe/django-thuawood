@@ -1,6 +1,6 @@
 Django==1.5
-Pillow==2.7.0
-argparse==1.2.1
-psycopg2==2.5.4
-python-memcached==1.53
+Pillow==3.4.1
+argparse==1.4.0
+psycopg2==2.6.2
+python-memcached==1.58
 sorl-thumbnail==11.12

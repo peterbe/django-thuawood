@@ -167,4 +167,4 @@ CACHES = {
 }
 
 
-PROJECT_TITLE = "Thuas trägubbar"
+PROJECT_TITLE = "Thuas Trägubbar"
