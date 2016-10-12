@@ -2,3 +2,4 @@ thuawood/settings/local.py
 thuawood/static/cache/
 thuawood/static/photos/
 thuawood/static/photos_old/
+thuawood/_FSCACHE

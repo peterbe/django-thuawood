@@ -99,6 +99,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+
+    # Important that this is last
+    'thuawood.middleware.FSCacheMiddleware',    
 )
 
 ROOT_URLCONF = 'thuawood.urls'
@@ -168,3 +171,8 @@ CACHES = {
 
 
 PROJECT_TITLE = "Thuas Trägubbar"
+
+
+# A path to where Nginx will look for files first
+FSCACHE_ROOT = path('_FSCACHE')
+assert not FSCACHE_ROOT.endswith('/')
