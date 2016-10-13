@@ -101,7 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 
     # Important that this is last
-    'thuawood.middleware.FSCacheMiddleware',    
+    'thuawood.middleware.FSCacheMiddleware',
 )
 
 ROOT_URLCONF = 'thuawood.urls'
@@ -116,6 +116,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
+    'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
     'thuawood.busts.context_processors.busts',
 )
@@ -170,7 +171,7 @@ CACHES = {
 }
 
 
-PROJECT_TITLE = "Thuas Trägubbar"
+PROJECT_TITLE = u"Thuas Trägubbar"
 
 
 # A path to where Nginx will look for files first

@@ -3,9 +3,35 @@
 
 {% block title %}{{ bust.title }} - {{ block.super }}{% endblock %}
 
-{% block extracss %}
+{% block extrahead %}
 {% thumbnail bust.image "600x600" as im %}
+<!-- Schema.org markup (Google) -->
+<meta itemprop="name" content="{{ bust.title }}">
+{% if bust.description %}
+<meta itemprop="description" content="{{ bust.description }}">
+{% endif %}
+<meta itemprop="image" content="{{ STATIC_URL }}{{ im.url }}">
+
+<!-- Twitter Card markup-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ bust.title }}">
+<meta name="twitter:image" content="{{ STATIC_URL }}{{ im.url }}">
+{% if bust.description %}
+<meta name="twitter:description" content="{{ bust.description }}">
+<meta name="twitter:image:alt" content="{{ bust.description }}">
+{% endif %}
+
+<!-- Open Graph markup (Facebook, Pinterest) -->
+<meta property="og:title" content="{{ bust.title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
 <meta property="og:image" content="{{ STATIC_URL }}{{ im.url }}">
+
+{% if bust.description %}
+<meta property="og:description" content="{{ bust.description }}" />
+{% endif %}
+<meta property="og:site_name" content="{{ PROJECT_TITLE }}" />
+
 {% endthumbnail %}
 {% endblock %}
 

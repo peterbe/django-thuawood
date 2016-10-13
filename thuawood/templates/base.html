@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="sv-SE">
+<html lang="sv-SE" itemscope itemtype="http://schema.org/Webpage">
 <head>
-
-<title>{% block title %}Thuas Tr&auml;gubbar{% endblock %}</title>
+<meta charset="utf-8">
+<title>{% block title %}Thuas Trägubbar{% endblock %}</title>
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/bilder/rss.xml" >
 
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/screen.css">
+
+{% block extrahead %}{% endblock %}
 
 {% block extracss %}{% endblock %}
 
@@ -18,8 +20,6 @@
 
 <div id="thumbs">
 {% load thumbnail %}
-{% load cache %}
-{% cache 600 random_busts %}
 {% for bust in random_busts %}
 <a href="{% url 'bust' bust.oid %}" title="{{ bust.title }}">
 {% thumbnail bust.image "50x50" crop="top" as im %}
@@ -28,7 +28,6 @@
 {% endthumbnail %}
 </a>
 {% endfor %}
-{% endcache %}
 
 <br />
 <a href="/bilder/rss.xml"
@@ -43,9 +42,9 @@
   &nbsp;
   <a href="{% url 'kontakt' %}">Kontakt</a>
   &nbsp;
-  <a href="{% url 'lankar' %}">L&auml;nkar</a>
+  <a href="{% url 'lankar' %}">Länkar</a>
   &nbsp;
-  <a href="{% url 'gastbok' %}">G&auml;stbok</a>
+  <a href="{% url 'gastbok' %}">Gästbok</a>
   &nbsp;
 </div>
 
