@@ -1,7 +1,7 @@
-Django==1.5
+Django==1.8.15
 Pillow==3.4.1
 argparse==1.4.0
 psycopg2==2.6.2
 python-memcached==1.58
-sorl-thumbnail==11.12
-requests==2.11.1
+sorl-thumbnail==12.3
+requests==2.12.4
