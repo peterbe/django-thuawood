@@ -1,14 +1,13 @@
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.cache import cache_page
-from models import Bust, Embed
+from thuawood.busts.models import Bust, Embed
 
 
-@cache_page(60 * 60 * 24)
+@cache_page(60 * 60)
 def home(request):
     data = {}
     return render(request, 'busts/home.html', data)
-
 
 
 @cache_page(60 * 60 * 24)

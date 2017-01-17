@@ -1,14 +1,12 @@
-# -*- coding: utf-8 -*-
-
 from django import forms
-from models import Entry
+from .models import Entry
 
 
 class Form(forms.ModelForm):
 
     class Meta:
         model = Entry
-        exclude = ('create_date',)
+        exclude = ('create_date', 'homepage')
 
     spamcheck = forms.CharField(max_length=len('stockholm'), required=True,
                                 label="Sveriges huvudstad?",

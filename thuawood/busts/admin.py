@@ -1,5 +1,6 @@
 from django.contrib import admin
-from models import Bust, Embed
+from .models import Bust, Embed
+
 
 class BustAdmin(admin.ModelAdmin):
     list_display = ('oid', 'title', 'create_date')

@@ -9,14 +9,14 @@ td.head { text-align:right; font-weight:bold; }
 </style>
 {% endblock %}
 
-{% block title %}G&auml;stbok - {{ block.super }}{% endblock %}
+{% block title %}Gästbok - {{ block.super }}{% endblock %}
 
-{% block page_title %}G&auml;stbok{% endblock %}
+{% block page_title %}Gästbok{% endblock %}
 
 {% block content %}
 
 <p class="sign">
-<a href="{% url 'skriv' %}">Skriv in i G&auml;stboken</a>
+<a href="{% url 'guestbook:skriv' %}">Skriv in i Gästboken</a>
 </p>
 
 {% for entry in entries %}
@@ -33,18 +33,16 @@ td.head { text-align:right; font-weight:bold; }
     <td>{{ entry.city }}</td>
   </tr>
   {% endif %}
+
   {% comment %}
-  <tr>
-    <td class="head">E-post:</td>
-    <td><a class="aeh" href="mailto:jonasson.ann~ATT~(removethis)telia_dot_com">jonasson.ann~ATT~(removethis)telia_dot_com</a></td>
-  </tr>
-  {% endcomment %}
   {% if entry.homepage %}
   <tr>
     <td class="head">Hemsida:</td>
     <td><a href="{{ entry.homepage }}" rel="nofollow" target="_blank">{{ entry.homepage }}</a></td>
   </tr>
   {% endif %}
+  {% endcomment %}
+
   <tr>
     <td valign="top" class="head">Kommentar:</td>
     <td>{{ entry.comment|linebreaksbr }}</td>

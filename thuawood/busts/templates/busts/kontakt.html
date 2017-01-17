@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail static %}
 
 {% block title %}Kontakt - {{ block.super }}{% endblock %}
 
@@ -12,20 +12,20 @@ Kontakt
 0390 / 101 86<br />
 070 / 760 08 67<br />
 Thua Bengtsson<br />
-R&#229;dmansgr&#228;nd 8<br />
-563 31 Gr&#228;nna<br />
+Rådmansgränd 8<br />
+563 31 Gränna<br />
 thuabengtsson@yahoo.se<br />
 </p>
 
 
 <p>
-<img src="{{ STATIC_URL }}images/fonster.jpg" alt="" style="float:left" />
-<img src="{{ STATIC_URL }}images/008.JPG" alt="" style="float:left;margin-right:10px" />
+<img src="{% static "images/fonster.jpg" %}" alt="" style="float:left" />
+<img src="{% static "images/008.JPG" %}" alt="" style="float:left;margin-right:10px" />
 
-<img src="{{ STATIC_URL }}images/011.JPG" alt="" style="float:left;margin-right:10px" />
+<img src="{% static "images/011.JPG" %}" alt="" style="float:left;margin-right:10px" />
 
-<img src="{{ STATIC_URL }}images/004.JPG" alt="" style="float:left" />
-<img src="{{ STATIC_URL }}images/024.JPG" alt="" style="float:left;margin-right:10px" />
+<img src="{% static "images/004.JPG" %}" alt="" style="float:left" />
+<img src="{% static "images/024.JPG" %}" alt="" style="float:left;margin-right:10px" />
 
 </p>
 

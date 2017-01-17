@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail static %}
 
 {% block title %}Länkar - {{ block.super }}{% endblock %}
 
@@ -24,29 +24,29 @@ Länkar
 {% endfor %}
 </div>
 
-<div id="lankar"><a href="http://www.trataljarna.se/" target="_blank">Tr&#228;t&#228;ljarna</a><br />
+<div id="lankar"><a href="http://www.trataljarna.se/" target="_blank">Trätäljarna</a><br />
 <a href="http://www.nordiskamuseet.se/" target="_blank">Nordiska museet</a><br />
 <a href="http://www.virserumskonsthall.com/" target="_blank">Virserum Konsthall</a><br />
-<a href="http://www.slojdmagasinet.nu/" target="_blank">Sl&#246;jdmagasinet</a><br />
-<a href="http://www.shrslojd.se/" target="_blank">Hemsl&#246;jdsportalen</a><br />
+<a href="http://www.slojdmagasinet.nu/" target="_blank">Slöjdmagasinet</a><br />
+<a href="http://www.shrslojd.se/" target="_blank">Hemslöjdsportalen</a><br />
 <a href="http://www.kanalen.org/hantverk/" target="_blank">Hantverkskanalen</a><br />
 <a href="http://www.tavido.se/tavido/" target="_blank">Tavido</a><br />
 <a href="http://www.naturkonst.net/" target="_blank">Naturkonst</a><br />
-<a href="http://www.slojd.nu/" target="_blank">Sl&#246;jd</a><br />
+<a href="http://www.slojd.nu/" target="_blank">Slöjd</a><br />
 
 <a href="http://www.snickra.net/" target="_blank">Snickra</a><br />
-<a href="http://www.cultur.nu/jam/index.shtml" target="_blank">J&#246;nk&#246;pings Allmogemarknad</a><br />
-<a href="http://www.jlh.shrslojd.se/" target="_blank">J&#246;nk&#246;pings l&#228;ns Hemsl&#246;jdsf&#246;rbund</a><br />
+<a href="http://www.cultur.nu/jam/index.shtml" target="_blank">Jönköpings Allmogemarknad</a><br />
+<a href="http://www.jlh.shrslojd.se/" target="_blank">Jönköpings läns Hemslöjdsförbund</a><br />
 <a href="http://www.snidaruffe.com/" target="_blank">Snidar Uffe</a><br />
-<a href="http://jonny.sv47.com/" target="_blank">Jonny Sl&#246;jdare</a><br />
-<a href="http://thua.deviantart.com" target="_blank">Thuas Tr&#228;gubbar p&#229; Deviant Art</a><br />
-<a href="http://www.myspace.com/thuawood" target="_blank">Thuas Tr&#228;gubbar p&#229; My  Space</a><br />
-<a href="http://www.facebook.com/home.php?sk=group_135585779825366&amp;ap=1" target="_blank">Thuas Tr&#228;gubbar p&#229; Facebook</a><br />
-<a href="http://www.facebook.com/profile.php?id=1284843481&amp;ref=nf" target="_blank">Thua Bengtsson p&#229; Facebook</a><br />
+<a href="http://jonny.sv47.com/" target="_blank">Jonny Slöjdare</a><br />
+<a href="http://thua.deviantart.com" target="_blank">Thuas Trägubbar på Deviant Art</a><br />
+<a href="http://www.myspace.com/thuawood" target="_blank">Thuas Trägubbar på My  Space</a><br />
+<a href="http://www.facebook.com/home.php?sk=group_135585779825366&amp;ap=1" target="_blank">Thuas Trägubbar på Facebook</a><br />
+<a href="http://www.facebook.com/profile.php?id=1284843481&amp;ref=nf" target="_blank">Thua Bengtsson på Facebook</a><br />
 <a href="https://www.peterbe.com" target="_blank">Peter</a><br />
 </div>
 <br /><br /><br />
 
 <br />
-<img src="{{ STATIC_URL }}images/fest.jpg" />
+<img src="{% static "images/fest.jpg" %}" />
 {% endblock %}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv-SE" itemscope itemtype="http://schema.org/Webpage">
+<head>
+  {% load static %}
+<meta charset="utf-8">
+<title>{% block title %}Thuas Trägubbar{% endblock %}</title>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/bilder/rss.xml" >
+
+<link rel="stylesheet" type="text/css" href="{% static "css/screen.css" %}">
+
+{% block extrahead %}{% endblock %}
+
+{% block extracss %}{% endblock %}
+
+{% block extrajs %}{% endblock %}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+</head>
+<body>
+
+<div id="thumbs">
+{% load thumbnail %}
+{% for bust in random_busts %}
+<a href="{% url 'busts:bust' bust.oid %}" title="{{ bust.title }}">
+{% thumbnail bust.image "50x50" crop="top" as im %}
+  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
+       alt="{{ bust.title }}" border="0">
+{% endthumbnail %}
+</a>
+{% endfor %}
+
+<br />
+<a href="/bilder/rss.xml"
+   title="RSS för den som vet vad det är">RSS</a>
+</div>&nbsp;<div id="main">
+
+
+<div id="nav">
+  <a href="/">Hem</a>
+  &nbsp;
+  <a href="{% url 'busts:snideri' %}">Snideri</a>
+  &nbsp;
+  <a href="{% url 'busts:kontakt' %}">Kontakt</a>
+  &nbsp;
+  <a href="{% url 'busts:lankar' %}">Länkar</a>
+  &nbsp;
+  <a href="{% url 'guestbook:gastbok' %}">Gästbok</a>
+  &nbsp;
+</div>
+
+<a name="top"></a>
+
+
+
+<div id="content">
+{% block header %}
+<h1 id="header">
+	<span>{{ root_title }}</span>
+</h1>
+{% endblock %}
+
+    <h2>{% block page_title %}{{ page_title }}{% endblock %}</h2>
+
+{% block content %}
+
+{% endblock %}
+</div>
+
+</div><!-- end main -->
+
+
+<div id="footer">
+
+<div><p>&copy; Thua Bengtsson, {% now "Y" %}
+</p></div>
+
+</div>
+<!-- end div footer -->
+
+</body>
+</html>

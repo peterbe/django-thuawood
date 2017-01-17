@@ -1,17 +1,31 @@
-from django.conf.urls import patterns, include, url
-from django.conf import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-# Uncomment the next two lines to enable the admin:
+from django.conf.urls import url, include
 from django.contrib import admin
-admin.autodiscover()
+from django.conf import settings
+from django.conf.urls.static import static
 
-urlpatterns = patterns('',
-    url(r'', include('thuawood.busts.urls')),
-    url(r'^gastbok', include('thuawood.guestbook.urls')),
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-)
+import thuawood.busts.urls
+import thuawood.guestbook.urls
+
+
+urlpatterns = [
+    url(
+        r'',
+        include(thuawood.busts.urls.urlpatterns, namespace='busts')
+    ),
+    url(
+        r'^gastbok',
+        include(thuawood.guestbook.urls.urlpatterns, namespace='guestbook')
+    ),
+    url(r'^admin/', admin.site.urls),
+]
+
 
 if settings.DEBUG:
-    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += static(
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
+    )
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )

@@ -3,3 +3,8 @@ thuawood/static/cache/
 thuawood/static/photos/
 thuawood/static/photos_old/
 thuawood/_FSCACHE
+_FSCACHE/
+legacy-media-root/
+/photos/
+/static/
+/cache/

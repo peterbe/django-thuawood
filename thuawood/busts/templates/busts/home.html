@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
 {% block content %}
-<img src="{{ STATIC_URL }}images/SCHACK.JPG" alt="" style="float:left;margin-left:30%" style="float:top;margin-top:10%" />
+<img src="{% static "images/SCHACK.JPG" %}" alt="" style="float:left;margin-left:30%" style="float:top;margin-top:10%" />
 
 {% endblock %}

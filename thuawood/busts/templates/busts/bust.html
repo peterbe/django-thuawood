@@ -15,7 +15,7 @@
 <!-- Twitter Card markup-->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ bust.title }}">
-<meta name="twitter:image" content="{{ STATIC_URL }}{{ im.url }}">
+<meta name="twitter:image" content="{{ im.url }}">
 {% if bust.description %}
 <meta name="twitter:description" content="{{ bust.description }}">
 <meta name="twitter:image:alt" content="{{ bust.description }}">
@@ -25,7 +25,7 @@
 <meta property="og:title" content="{{ bust.title }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-<meta property="og:image" content="{{ STATIC_URL }}{{ im.url }}">
+<meta property="og:image" content="{{ im.url }}">
 
 {% if bust.description %}
 <meta property="og:description" content="{{ bust.description }}" />
@@ -43,19 +43,19 @@
 
 <p>
 {% thumbnail bust.image "600x600" as im %}
-  <img src="{{ STATIC_URL }}{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ bust.title }}">
+  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ bust.title }}">
 {% endthumbnail %}
 </p>
 
 <p>
 {% with bust.get_previous_by_create_date as prev_bust %}
-<a class="prev" href="{% url 'bust' prev_bust.oid %}#title">&lt;&lt; F&#246;reg&#229;ende ({% if prev_bust.title %}{{ prev_bust.title }}{% else %}{{ prev_bust.oid }}{% endif %})</a>
+<a class="prev" href="{% url 'busts:bust' prev_bust.oid %}#title">&lt;&lt; Föregående ({% if prev_bust.title %}{{ prev_bust.title }}{% else %}{{ prev_bust.oid }}{% endif %})</a>
 {% endwith %}
 
 &nbsp;
 {% with bust.get_next_by_create_date as next_bust %}
 {% if next_bust %}
-<a class="next" href="{% url 'bust' next_bust.oid %}#title">N&#228;sta ({{ next_bust.title }}) &gt;&gt;</a>
+<a class="next" href="{% url 'busts:bust' next_bust.oid %}#title">Nästa ({{ next_bust.title }}) &gt;&gt;</a>
 {% endif %}
 {% endwith %}
 </p>

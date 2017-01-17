@@ -11,6 +11,7 @@ max_age_re = re.compile('max-age=(\d+)')
 class FSCacheMiddleware(object):
 
     def process_response(self, request, response):
+        print(settings.FSCACHE_ROOT)
         if cache_request(request, response):
             fs_path = path_to_fs_path(request.path)
             if not fs_path:

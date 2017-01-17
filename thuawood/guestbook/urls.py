@@ -1,7 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 
-import views
-urlpatterns = patterns('',
-    url('^$', views.gastbok, name='gastbok'),
-    url('^/skriv/$', views.skriv, name='skriv'),
-)
+from thuawood.guestbook import views
+
+
+urlpatterns = [
+    url('', views.gastbok, name='gastbok'),
+    url('^skriv/$', views.skriv, name='skriv'),
+]
