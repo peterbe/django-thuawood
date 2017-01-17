@@ -172,6 +172,10 @@ handler.setLevel(logging.ERROR)
 logging.getLogger('sorl.thumbnail').addHandler(handler)
 
 
+#HACK
+logging.basicConfig(filename='/tmp/thuawood.log',
+                   level=logging.DEBUG)
+
 EMAIL_HOST = config('EMAIL_HOST', None)
 EMAIL_PORT = config('EMAIL_PORT', None)
 EMAIL_SUBJET_PREFIX = config('EMAIL_SUBJECT_PREFIX', '[Thuawood] ')
