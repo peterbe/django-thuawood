@@ -160,4 +160,3 @@ FSCACHE_ROOT = config(
     default=os.path.abspath(os.path.join(BASE_DIR, '..', '_FSCACHE'))
 )
 assert not FSCACHE_ROOT.endswith('/')
-print("FSCACHE_ROOT", FSCACHE_ROOT)

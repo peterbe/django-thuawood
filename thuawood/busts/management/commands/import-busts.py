@@ -25,7 +25,7 @@ class Command(BaseCommand):
             )
             image_path = os.path.abspath(image_path)
             if not os.path.isfile(image_path):
-                print("NO VALID IMAGE FOR ", (oid, title))
+                print("NO VALID IMAGE FOR ", (oid, title), image_path)
                 continue
             if Bust.objects.filter(oid=oid).exists():
                 continue
