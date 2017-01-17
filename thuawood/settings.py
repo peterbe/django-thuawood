@@ -96,7 +96,7 @@ CACHES = {
         ),
         'LOCATION': config('CACHE_LOCATION', '127.0.0.1:11211'),
         'TIMEOUT': config('CACHE_TIMEOUT', 500),
-        'KEY_PREFIX': config('CACHE_KEY_PREFIX', 'songsearch'),
+        'KEY_PREFIX': config('CACHE_KEY_PREFIX', 'thuawood'),
     }
 }
 
@@ -160,3 +160,5 @@ FSCACHE_ROOT = config(
     default=os.path.abspath(os.path.join(BASE_DIR, '..', '_FSCACHE'))
 )
 assert not FSCACHE_ROOT.endswith('/')
+
+THUMBNAIL_DEBUG = config('THUMBNAIL_DEBUG', default=False, cast=bool)
