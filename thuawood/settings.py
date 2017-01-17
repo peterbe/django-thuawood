@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'thuawood.wsgi.application'
 DATABASES = {
     'default': config(
         'DATABASE_URL',
-        default='postgresql://localhost/thuawood2',
+        default='postgresql://localhost/thuawood',
         cast=dj_database_url.parse
     ),
     'legacy': config(
-        'DATABASE_URL',
-        default='postgresql://localhost/thuawood',
+        'LEGACY_DATABASE_URL',
+        default='postgresql://localhost/thuawood_old',
         cast=dj_database_url.parse
     ),
 }
