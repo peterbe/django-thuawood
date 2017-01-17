@@ -162,3 +162,20 @@ FSCACHE_ROOT = config(
 assert not FSCACHE_ROOT.endswith('/')
 
 THUMBNAIL_DEBUG = config('THUMBNAIL_DEBUG', default=False, cast=bool)
+
+
+import logging
+from sorl.thumbnail.log import ThumbnailLogHandler
+
+handler = ThumbnailLogHandler()
+handler.setLevel(logging.ERROR)
+logging.getLogger('sorl.thumbnail').addHandler(handler)
+
+
+EMAIL_HOST = config('EMAIL_HOST', None)
+EMAIL_PORT = config('EMAIL_PORT', None)
+EMAIL_SUBJET_PREFIX = config('EMAIL_SUBJECT_PREFIX', '[Thuawood] ')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', None)
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', None)
+
+SERVER_EMAIL = config('SERVER_EMAIL', None) or EMAIL_HOST_USER
