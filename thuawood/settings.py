@@ -145,9 +145,14 @@ STATIC_ROOT = config(
 
 PROJECT_TITLE = 'Thuas Trägubbar'
 
-MEDIA_URL = config('MEDIA_URL', default='/')
+MEDIA_URL = config('MEDIA_URL', default='/media/')
 
 LEGACY_MEDIA_ROOT = config('LEGACY_MEDIA_ROOT', './legacy-media-root')
+
+MEDIA_ROOT = config(
+    'MEDIA_ROOT',
+    default=os.path.abspath(os.path.join(BASE_DIR, '..', 'media'))
+)
 
 FSCACHE_SECURE_SITE = config(
     'FSCACHE_SECURE_SITE',
