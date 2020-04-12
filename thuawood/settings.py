@@ -1,8 +1,8 @@
 import os
 import sys
+from pathlib import Path
 
 from decouple import config, Csv
-from unipath import Path
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -92,9 +92,12 @@ CACHES = {
     'default': {
         'BACKEND': config(
             'CACHE_BACKEND',
-            'django.core.cache.backends.memcached.MemcachedCache',
+            'django_redis.cache.RedisCache',
         ),
-        'LOCATION': config('CACHE_LOCATION', '127.0.0.1:11211'),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        'LOCATION': config('CACHE_LOCATION', 'redis://127.0.0.1:6379/1'),
         'TIMEOUT': config('CACHE_TIMEOUT', 500),
         'KEY_PREFIX': config('CACHE_KEY_PREFIX', 'thuawood'),
     }

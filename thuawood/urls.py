@@ -3,18 +3,18 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-import thuawood.busts.urls
-import thuawood.guestbook.urls
+# import thuawood.busts.urls
+# import thuawood.guestbook.urls
 
 
 urlpatterns = [
     url(
         r'',
-        include(thuawood.busts.urls.urlpatterns, namespace='busts')
+        include('thuawood.busts.urls', namespace='busts')
     ),
     url(
         r'^gastbok',
-        include(thuawood.guestbook.urls.urlpatterns, namespace='guestbook')
+        include('thuawood.guestbook.urls', namespace='guestbook')
     ),
     url(r'^admin/', admin.site.urls),
 ]

@@ -4,6 +4,8 @@ from django.conf.urls import url
 from thuawood.busts import views
 from thuawood.busts import feeds
 
+app_name = 'busts'
+
 urlpatterns = [
     url(
         r'^$',
